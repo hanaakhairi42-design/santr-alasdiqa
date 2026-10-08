@@ -1,0 +1,369 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#082b52">
+  <meta name="description" content="سنتر الأصدقاء للخدمات الإلكترونية — خدمات إلكترونية وتعليمية وإدارية داخل مصر.">
+
+  <title>سنتر الأصدقاء للخدمات الإلكترونية</title>
+  <meta name="description" content="سنتر الأصدقاء للخدمات الإلكترونية في مصر. خدمات الضرائب العقارية، تصاريح السفر، التصميم، تحويل الملفات، الخدمات الطلابية، التموين وتصاريح العمل.">
+  <meta name="keywords" content="سنتر الأصدقاء, خدمات إلكترونية, مصر, ضرائب عقارية, تصاريح سفر, خدمات طلاب, بطاقة تموين, تصاريح عمل">
+
+  <style>
+    :root{
+      --blue:#082b52;
+      --blue2:#0d5c87;
+      --cyan:#11a6a1;
+      --gold:#f4bd45;
+      --light:#f5f8fc;
+      --text:#172b45;
+      --muted:#6b7b90;
+      --white:#fff;
+      --border:#e5edf4;
+      --shadow:0 16px 45px rgba(8,43,82,.09);
+    }
+
+    *{margin:0;padding:0;box-sizing:border-box;font-family:Tahoma,Arial,sans-serif}
+    html{scroll-behavior:smooth}
+    body{background:var(--light);color:var(--text);line-height:1.8;overflow-x:hidden}
+    a{color:inherit}
+    ::selection{background:rgba(244,189,69,.45);color:var(--blue)}
+
+    header{
+      position:sticky;top:0;z-index:100;
+      background:rgba(8,43,82,.94);
+      backdrop-filter:blur(14px);
+      color:#fff;padding:12px 6%;
+      display:flex;justify-content:space-between;align-items:center;gap:20px;
+      border-bottom:1px solid rgba(255,255,255,.08);
+    }
+    .brand{display:flex;align-items:center;gap:11px}
+    .brand-icon{
+      width:46px;height:46px;border-radius:14px;
+      background:linear-gradient(135deg,var(--gold),#fff0ad);
+      color:var(--blue);display:flex;align-items:center;justify-content:center;
+      font-size:24px;font-weight:900;box-shadow:0 8px 22px rgba(244,189,69,.2)
+    }
+    .brand h2{font-size:19px;line-height:1.25}
+    .brand small{display:block;color:#b9eff0;font-size:11px}
+    nav{display:flex;align-items:center;gap:6px;flex-wrap:wrap}
+    nav a{
+      color:#fff;text-decoration:none;padding:8px 11px;border-radius:10px;
+      font-size:13px;transition:.25s
+    }
+    nav a:hover{color:var(--gold);background:rgba(255,255,255,.07)}
+
+    .hero{
+      position:relative;min-height:590px;padding:95px 7%;
+      color:#fff;display:flex;align-items:center;overflow:hidden;
+      background:
+        radial-gradient(circle at 85% 20%,rgba(36,196,188,.42),transparent 25%),
+        radial-gradient(circle at 15% 90%,rgba(244,189,69,.13),transparent 25%),
+        linear-gradient(120deg,#061f3d,#0d5c87);
+    }
+    .hero::after{
+      content:"";position:absolute;inset:auto -8% -110px -8%;height:180px;
+      background:var(--light);border-radius:50% 50% 0 0/45% 45% 0 0;
+    }
+    .hero-content{max-width:760px;position:relative;z-index:1}
+    .badge{
+      display:inline-flex;align-items:center;gap:7px;color:var(--gold);
+      border:1px solid rgba(244,189,69,.55);background:rgba(255,255,255,.05);
+      padding:6px 14px;border-radius:30px;margin-bottom:18px;font-size:13px
+    }
+    .badge::before{content:"";width:7px;height:7px;border-radius:50%;background:var(--cyan)}
+    .hero h1{font-size:clamp(34px,5vw,56px);line-height:1.25;margin-bottom:18px;letter-spacing:-1px}
+    .hero h1 span{color:var(--gold)}
+    .hero p{font-size:18px;color:#e1f1f4;max-width:680px;margin-bottom:28px}
+    .buttons{display:flex;flex-wrap:wrap;gap:11px}
+    .btn{
+      border:none;cursor:pointer;text-decoration:none;display:inline-flex;
+      align-items:center;justify-content:center;padding:12px 23px;border-radius:14px;
+      font-size:14px;font-weight:700;transition:.25s;gap:7px
+    }
+    .btn:hover{transform:translateY(-3px);box-shadow:0 10px 22px rgba(0,0,0,.13)}
+    .gold{background:var(--gold);color:var(--blue)}
+    .whatsapp{background:#20bd5a;color:#fff}
+    .telegram{background:#229ed9;color:#fff}
+
+    section{padding:76px 7%}
+    .section-head{text-align:center;margin-bottom:34px}
+    .section-head h2{color:var(--blue);font-size:32px;margin-bottom:6px}
+    .section-head p{color:var(--muted);font-size:14px}
+
+    .search{max-width:610px;margin:0 auto 34px;position:relative}
+    .search input{
+      width:100%;padding:16px 21px 16px 48px;border:1px solid var(--border);
+      border-radius:17px;outline:none;font-size:14px;background:#fff;
+      box-shadow:0 8px 24px rgba(8,43,82,.06);transition:.25s
+    }
+    .search input:focus{border-color:var(--cyan);box-shadow:0 0 0 4px rgba(17,166,161,.10)}
+    .search::before{content:"⌕";position:absolute;left:18px;top:7px;font-size:25px;color:var(--muted);z-index:1}
+
+    .services{display:grid;grid-template-columns:repeat(auto-fit,minmax(245px,1fr));gap:20px}
+    .service-card{
+      background:#fff;border-radius:20px;padding:24px;border:1px solid var(--border);
+      box-shadow:var(--shadow);transition:.28s;position:relative;overflow:hidden
+    }
+    .service-card::before{
+      content:"";position:absolute;top:0;right:0;width:100%;height:3px;
+      background:linear-gradient(90deg,var(--cyan),var(--gold));transform:scaleX(0);
+      transform-origin:right;transition:.28s
+    }
+    .service-card:hover{transform:translateY(-6px);box-shadow:0 20px 48px rgba(8,43,82,.13);border-color:#d8e6ef}
+    .service-card:hover::before{transform:scaleX(1)}
+    .service-icon{
+      width:56px;height:56px;border-radius:16px;background:#e8f7f7;
+      display:flex;align-items:center;justify-content:center;font-size:28px;margin-bottom:14px
+    }
+    .service-card h3{color:var(--blue);margin-bottom:7px;font-size:18px}
+    .service-card p{color:var(--muted);font-size:13px;min-height:78px;margin-bottom:16px}
+    .service-card .btn{width:100%;padding:10px;font-size:13px;border-radius:12px}
+
+    .about{background:linear-gradient(180deg,#e9f7f7,#eef9f9);text-align:center}
+    .about-content{max-width:900px;margin:auto}
+    .features{display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));gap:14px;margin-top:28px}
+    .feature{
+      background:#fff;padding:19px;border-radius:17px;border:1px solid rgba(8,43,82,.05);
+      box-shadow:0 8px 25px rgba(8,43,82,.05);font-size:20px
+    }
+    .feature strong{display:block;color:var(--blue);margin-top:5px;font-size:14px}
+
+    .faq{max-width:850px;margin:auto}
+    details{
+      background:#fff;padding:17px 20px;margin-bottom:11px;border-radius:15px;
+      border:1px solid var(--border);box-shadow:0 5px 18px rgba(0,0,0,.04)
+    }
+    summary{cursor:pointer;color:var(--blue);font-weight:700}
+    details p{color:var(--muted);font-size:14px;padding-top:10px}
+
+    .contact-box{
+      max-width:900px;margin:auto;text-align:center;background:
+      radial-gradient(circle at 85% 20%,rgba(36,196,188,.25),transparent 30%),
+      linear-gradient(135deg,var(--blue),var(--blue2));
+      color:#fff;padding:48px 25px;border-radius:28px;box-shadow:0 20px 55px rgba(8,43,82,.16)
+    }
+    .contact-box h2{font-size:28px}
+    .contact-box p{color:#d8eef0;margin:8px 0 22px}
+
+    footer{background:#061e39;color:#c6d6e5;text-align:center;padding:24px;font-size:12px}
+    .floating{
+      position:fixed;bottom:20px;left:20px;width:57px;height:57px;background:#20bd5a;
+      color:#fff;display:flex;align-items:center;justify-content:center;border-radius:50%;
+      text-decoration:none;font-size:25px;box-shadow:0 8px 25px rgba(0,0,0,.2);
+      z-index:200;transition:.25s
+    }
+    .floating:hover{transform:scale(1.07)}
+
+    @media(max-width:700px){
+      header{display:block;text-align:center;padding:11px 4%}
+      .brand{justify-content:center}
+      nav{justify-content:center;margin-top:8px}
+      nav a{padding:6px 7px;margin:0;font-size:11px}
+      .hero{min-height:520px;padding:68px 6%;text-align:center}
+      .hero-content{margin:auto}
+      .hero p{font-size:15px}
+      .buttons{justify-content:center}
+      .btn{padding:11px 18px}
+      section{padding:60px 6%}
+      .section-head h2{font-size:28px}
+      .service-card p{min-height:auto}
+      .contact-box{padding:38px 18px}
+    }
+  </style>
+</head>
+
+<body>
+
+<header>
+  <div class="brand">
+    <div class="brand-icon">✓</div>
+    <div>
+      <h2>سنتر الأصدقاء</h2>
+      <small>للخدمات الإلكترونية</small>
+    </div>
+  </div>
+
+  <nav>
+    <a href="#home">الرئيسية</a>
+    <a href="#services">الخدمات</a>
+    <a href="#about">عن السنتر</a>
+    <a href="#contact">تواصل معنا</a>
+  </nav>
+</header>
+
+<main>
+  <section class="hero" id="home">
+    <div class="hero-content">
+      <div class="badge">خدمات إلكترونية داخل مصر</div>
+      <h1>كل خدماتك الإلكترونية <span>في مكان واحد</span></h1>
+      <p>
+        سنتر الأصدقاء يساعدك في تجهيز ومتابعة العديد من الخدمات
+        الإلكترونية والتعليمية والإدارية بطريقة سهلة وسريعة.
+      </p>
+
+      <div class="buttons">
+        <a href="#services" class="btn gold">استعرض الخدمات</a>
+        <a href="https://wa.me/201067309586" target="_blank" rel="noopener noreferrer" class="btn whatsapp">
+          تواصل عبر واتساب
+        </a>
+      </div>
+
+      <div style="display:flex;gap:10px;flex-wrap:wrap;margin-top:28px;color:#d8eef0;font-size:12px">
+        <span>✓ خدمة سهلة</span>
+        <span>✓ تواصل مباشر</span>
+        <span>✓ دعم داخل مصر</span>
+      </div>
+    </div>
+  </section>
+
+  <section id="services">
+    <div class="section-head">
+      <h2>خدماتنا</h2>
+      <p>اختار الخدمة واضغط على استمرار للتواصل معنا مباشرة</p>
+    </div>
+
+    <div class="search">
+      <input id="searchInput" type="text" placeholder="ابحث عن الخدمة التي تحتاجها...">
+    </div>
+
+    <div class="services" id="servicesContainer"></div>
+  </section>
+
+  <section class="about" id="about">
+    <div class="about-content">
+      <div class="section-head">
+        <h2>لماذا سنتر الأصدقاء؟</h2>
+        <p>
+          نوفر لك المساعدة في تجهيز البيانات والمستندات والخطوات الإلكترونية
+          المطلوبة للخدمات المختلفة.
+        </p>
+      </div>
+
+      <div class="features">
+        <div class="feature">⚡<strong>سرعة في التنفيذ</strong></div>
+        <div class="feature">📱<strong>دعم عبر واتساب</strong></div>
+        <div class="feature">🔒<strong>اهتمام بالبيانات</strong></div>
+        <div class="feature">🇪🇬<strong>خدمات داخل مصر</strong></div>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <div class="section-head">
+      <h2>الأسئلة الشائعة</h2>
+    </div>
+
+    <div class="faq">
+      <details>
+        <summary>كيف أطلب خدمة؟</summary>
+        <p>اختار الخدمة واضغط على زر استمرار، وسيتم فتح واتساب برسالة جاهزة.</p>
+      </details>
+
+      <details>
+        <summary>هل الأسعار موجودة على الموقع؟</summary>
+        <p>يتم تحديد السعر حسب نوع الخدمة والتفاصيل، ويمكن معرفة السعر من خلال التواصل على واتساب.</p>
+      </details>
+
+      <details>
+        <summary>هل الخدمات متاحة لكل محافظات مصر؟</summary>
+        <p>تختلف إمكانية تنفيذ الخدمة حسب نوعها والجهة المختصة، تواصل معنا لمعرفة التفاصيل.</p>
+      </details>
+
+      <details>
+        <summary>هل السنتر جهة حكومية؟</summary>
+        <p>لا، السنتر يقدم المساعدة في الإجراءات الإلكترونية، أما قبول الطلبات فيخضع للجهة الحكومية المختصة.</p>
+      </details>
+    </div>
+  </section>
+
+  <section id="contact">
+    <div class="contact-box">
+      <h2>تواصل مع سنتر الأصدقاء</h2>
+      <p>للاستفسار عن أي خدمة أو معرفة السعر، تواصل معنا الآن.</p>
+
+      <div class="buttons" style="justify-content:center">
+        <a href="https://wa.me/201067309586" target="_blank" rel="noopener noreferrer" class="btn whatsapp">
+          واتساب
+        </a>
+
+        <a href="https://t.me/Dr_M7amd_khairi" target="_blank" rel="noopener noreferrer" class="btn telegram">
+          تيليجرام
+        </a>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer>
+  © <span id="year"></span> سنتر الأصدقاء للخدمات الإلكترونية - جميع الحقوق محفوظة
+</footer>
+
+<a class="floating" href="https://wa.me/201067309586" target="_blank" rel="noopener noreferrer" aria-label="تواصل عبر واتساب">☎</a>
+
+<script>
+  const services = [
+    ["🏠", "الضرائب العقارية", "المساعدة في تجهيز ومتابعة إجراءات الضرائب العقارية والمستندات المطلوبة."],
+    ["🛂", "تصاريح السفر", "المساعدة في تقديم طلبات تصاريح السفر الداخلية والحربية ومتابعة خطوات الإجراء."],
+    ["📄", "كتابة وتحويل الملفات", "كتابة وتنسيق المستندات وتحويل الملفات بين Word وPDF والصور والصيغ المختلفة."],
+    ["🎨", "تصميم الصور", "تصميم الإعلانات والمنشورات والبطاقات والدعوات والصور للسوشيال ميديا."],
+    ["🏥", "حجز عيادات الجامعة", "المساعدة في حجز مواعيد العيادات الجامعية وتسجيل البيانات المطلوبة."],
+    ["🩺", "حجز التأمين الصحي", "المساعدة في حجز مواعيد وخدمات التأمين الصحي وتجهيز البيانات اللازمة."],
+    ["🎓", "تسجيل رغبات الطلاب", "المساعدة في تسجيل رغبات طلاب الجامعات ومراجعة البيانات قبل الإرسال."],
+    ["🧾", "حجز الكشف الطبي", "المساعدة في حجز الكشف الطبي للطلاب وإتمام خطوات التسجيل الإلكتروني."],
+    ["💳", "تحديث بطاقات التموين", "المساعدة في تحديث بيانات بطاقات التموين وإضافة أو تعديل البيانات."],
+    ["💼", "استخراج تصاريح العمل", "المساعدة في تجهيز إجراءات استخراج تصاريح العمل والمستندات المطلوبة."],
+    ["💻", "خدمات إلكترونية متنوعة", "تنفيذ وتجهيز العديد من الخدمات الإلكترونية الحكومية والتعليمية والإدارية."]
+  ];
+
+  const container = document.getElementById("servicesContainer");
+  const searchInput = document.getElementById("searchInput");
+
+  function showServices(list) {
+    container.innerHTML = "";
+
+    if (list.length === 0) {
+      container.innerHTML = "<p style='text-align:center'>لم يتم العثور على خدمة بهذا الاسم.</p>";
+      return;
+    }
+
+    list.forEach(service => {
+      const [icon, title, description] = service;
+      const message = encodeURIComponent(
+        `مرحبًا، أريد الاستفسار عن خدمة ${title} من سنتر الأصدقاء`
+      );
+
+      container.innerHTML += `
+        <article class="service-card">
+          <div class="service-icon">${icon}</div>
+          <h3>${title}</h3>
+          <p>${description}</p>
+          <a class="btn whatsapp"
+             href="https://wa.me/201067309586?text=${message}"
+             target="_blank">
+             استمرار
+          </a>
+        </article>
+      `;
+    });
+  }
+
+  showServices(services);
+
+  document.getElementById("year").textContent = new Date().getFullYear();
+
+  searchInput.addEventListener("input", function () {
+    const value = this.value.trim().toLowerCase();
+
+    const filtered = services.filter(service =>
+      service[1].toLowerCase().includes(value) ||
+      service[2].toLowerCase().includes(value)
+    );
+
+    showServices(filtered);
+  });
+</script>
+
+</body>
+</html>
